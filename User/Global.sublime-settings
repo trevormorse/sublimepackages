@@ -1,0 +1,9 @@
+// Place user-specific overrides in this file, to ensure they're preserved
+// when upgrading
+{
+    // Turn on Vintage (vi) mode
+    "ignored_packages": [""],
+
+    // Default theme for now
+    "theme": "Default.sublime-theme"
+}
