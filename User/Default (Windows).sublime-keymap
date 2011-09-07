@@ -1,4 +1,7 @@
 [
     // Tidy xml
-    { "keys": ["ctrl+shift+x"], "command": "tidy_xml" }
+    { "keys": ["ctrl+shift+x"], "command": "tidy_xml" },
+
+    // Tidy json
+    { "keys": ["ctrl+shift+j"], "command": "tidy_json" }
 ]
