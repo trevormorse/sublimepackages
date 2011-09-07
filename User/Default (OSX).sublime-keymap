@@ -1,2 +1,4 @@
 [
+    // Tidy xml
+    { "keys": ["ctrl+shift+x"], "command": "tidy_xml" }
 ]
