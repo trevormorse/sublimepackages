@@ -2,7 +2,7 @@
 #################################### IMPORTS ###################################
 
 # Std Libs
-# import operator
+import operator
 
 # Sublime Libs
 import sublime
@@ -70,18 +70,18 @@ __authors__     = ['"Sergey Chikuyonok" <serge.che@gmail.com>'
 zen_settings = sublime.load_settings('zen-coding.sublime-settings')
 
 
-# OPMAP = {
-#     sublime.OP_EQUAL     : operator.eq,
-#     sublime.OP_NOT_EQUAL : operator.ne,
-# }
+OPMAP = {
+    sublime.OP_EQUAL     : operator.eq,
+    sublime.OP_NOT_EQUAL : operator.ne,
+}
 
-# def eval_op(op, operand, operand2):
-#     return OPMAP[op](operand, operand2)
+def eval_op(op, operand, operand2):
+    return OPMAP[op](operand, operand2)
 
-# class ZenSettings(sublime_plugin.EventListener):
-#     def on_query_context(self, view, key, op, operand, match_all):
-#         if key.startswith('zen_setting'):
-#             return eval_op(op, operand, zen_settings.get(key.split('.')[1]))
+class ZenSettings(sublime_plugin.EventListener):
+    def on_query_context(self, view, key, op, operand, match_all):
+        if key.startswith('zen_setting'):
+            return eval_op(op, operand, zen_settings.get(key.split('.')[1]))
 
 ##################################### TODO #####################################
 """
@@ -153,7 +153,7 @@ class ZenAsYouType(CommandsAsYouTypeBase):
     def filter_input(self, abbr):
         try:
             return expand_abbr(abbr, super_profile='no_check_valid')
-        except ZenInvalidAbbreviation:
+        except Exception:
             "dont litter the console"
 
 class WrapZenAsYouType(CommandsAsYouTypeBase):
@@ -163,14 +163,16 @@ class WrapZenAsYouType(CommandsAsYouTypeBase):
     def run_command(self, view, cmd_input):
         try:
             ex = expand_abbr(cmd_input, super_profile='no_check_valid')
-            p = editor.get_profile_name() + '.no_check_valid'
-            if not ex: raise ZenInvalidAbbreviation('Empty expansion %r' % ex)
-        except ZenInvalidAbbreviation:
+            p  = editor.get_profile_name() + '.no_check_valid'
+            if not ex.strip():
+                raise ZenInvalidAbbreviation('Empty expansion %r' % ex)
+        except Exception:
             return False
 
         view.run_command (
             'run_zen_action',
-            dict(action="wrap_with_abbreviation", abbr=cmd_input, profile_name=p))
+            dict(action="wrap_with_abbreviation",
+            abbr=cmd_input, profile_name=p))
 
 ################################ RUN ZEN ACTION ################################
 
