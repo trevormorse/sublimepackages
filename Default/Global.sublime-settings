@@ -1,5 +1,5 @@
 {
-	// The theme controls the look at Sublime Text's UI (buttons, tabs, scroll bars, etc)
+	// The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
 	"theme": "Default.sublime-theme",
 
 	// Exiting the application with hot_exit enabled will cause it to close
@@ -29,6 +29,9 @@
 	// scroll slower, or set to larger than 1 to scroll faster
 	"scroll_speed": 1.0,
 
+	// Controls side bar animation when expanding or collapsing folders
+	"tree_animation_enabled": true,
+
 	"show_tab_close_buttons": true,
 
 	// Places a highlight on tabs with unsaved changes
@@ -49,6 +52,9 @@
 
 	// Valid values are "system", "enabled" and "disabled"
 	"overlay_scroll_bars": "system",
+
+	// Files containing null bytes are opened as hexadecimal by default
+	"enable_hexadecimal_encoding": true,
 
 	// List any packages to ignore here. When removing entries from this list,
 	// a restart may be required if the package contains plugins.
