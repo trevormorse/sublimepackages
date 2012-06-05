@@ -48,13 +48,6 @@
         "content_margin": [22, 6, 15, 4]
     },
     {
-        // Tab dirty state
-        "class": "tab_control",
-        "settings": ["highlight_modified_tabs"],
-        "attributes": ["dirty"],
-        "content_margin": [22, 6, 15, 4]
-    },
-    {
         // Hover tab state
         "class": "tab_control",
         "attributes": ["hover"],
@@ -70,23 +63,21 @@
     },
     // Tab labels
     {
-        // Inactive tab label
         "class": "tab_label",
         "fade": true,
-        "fg": [204, 204, 204],
-        "bg": [66, 66, 66]
+        "fg": [175, 175, 175],
+        "shadow_color": [0, 0, 0],
+        "shadow_offset": [0, -1] 
     },
     {
-        // Inactive tab label hover
         "class": "tab_label",
         "parents": [{"class": "tab_control", "attributes": ["hover"]}],
-        "bg": [75, 75, 75]
+        "fg": [200, 200, 200]
     },
     {
-        // Active tab label
         "class": "tab_label",
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-        "bg": [78, 78, 78]
+        "fg": [245, 245, 245]
     },
     // Tab close button
     {
@@ -107,7 +98,7 @@
         "content_margin": [8, 8]
     },
     {
-        // Tab close hover action
+        // Tab close button hover
         "class": "tab_close_button",
         "attributes": ["hover"],
         "layer0.opacity": 0.0,
@@ -116,29 +107,33 @@
     // Tab dirty button
     {
         "class": "tab_close_button",
-        "settings": ["highlight_modified_tabs"],
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
-        "content_margin": [8, 8],
         "layer0.texture": "Theme - Soda/Soda Dark/tab-dirty.png",
-        "layer0.opacity": 1.0, 
+        "layer0.opacity": 1.0,
         "layer1.opacity": 0.0
     },
     {
         // Tab dirty button hover
         "class": "tab_close_button",
-        "settings": ["highlight_modified_tabs"],
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
         "attributes": ["hover"],
         "layer0.opacity": 0.0,
         "layer1.opacity": 1.0
     },
+    // Tab close button hidden with highlight modified flag true
     {
-        // Tab dirty button hover (close button hidden)
+        // Tab dirty state (close button hidden)
+        "class": "tab_control",
+        "settings": ["!show_tab_close_buttons", "highlight_modified_tabs"],
+        "attributes": ["dirty"],
+        "content_margin": [22, 6, 15, 4]
+    },
+    {
+        // Tab dirty button (close button hidden)
         "class": "tab_close_button",
-        "settings": ["highlight_modified_tabs"],
-        "settings": ["!show_tab_close_buttons"],
+        "settings": ["!show_tab_close_buttons", "highlight_modified_tabs"],
         "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
-        "attributes": ["hover"],
+        "content_margin": [8, 8],
         "layer0.opacity": 1.0,
         "layer1.opacity": 0.0
     },
@@ -168,7 +163,7 @@
         "attributes": ["pressed"],
         "layer0.opacity": 0.0,
         "layer1.opacity": 1.0
-    },    
+    },
     {
         "class": "fold_button_control",
         "attributes": ["expanded"],
@@ -301,6 +296,16 @@
     },
 
 //
+// GRID LAYOUT
+//
+
+    {
+        "class": "grid_layout_control",
+        "border_size": 1,
+        "border_color": [70, 70, 70]
+    },
+
+//
 // MINI MAP
 //
 
@@ -422,17 +427,32 @@
         "shadow_color": [0, 0, 0],
         "shadow_offset": [0, 1]
     },
-    {
-        "class": "sidebar_heading",
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "color": [210, 210, 210]
-    },
     // Sidebar entry
     {
         "class": "sidebar_label",
         "color": [125, 125, 125],
         "shadow_offset": [0, 0]
     },
+    // Sidebar folder entry
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+        "color": [210, 210, 210],
+        "shadow_color": [0, 0, 0],
+        "shadow_offset": [0, 1]
+    },
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
+        "color": [235, 235, 235]
+    },
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+        "settings": ["bold_folder_labels"],
+        "font.bold": true
+    },
+    // Sidebar entry selected
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
@@ -441,7 +461,7 @@
         "shadow_offset": [0, 1]
     },
     // Sidebar file close
-    { 
+    {
         "class": "close_button",
         "layer0.texture": "Theme - Soda/Soda Dark/file-close.png",
         "layer0.opacity": 0.0,
@@ -610,27 +630,27 @@
     },
     {
         "class": "quick_panel_label",
-        "fg": [190, 190, 190, 255],
-        "match_fg": [255, 255, 255, 255],
+        "fg": [210, 210, 210, 255],
+        "match_fg": [126, 199, 239, 255],
         "bg": [41, 41, 41, 255],
-        "selected_fg": [200, 200, 200, 255],
-        "selected_match_fg": [255, 255, 255, 255],
+        "selected_fg": [255, 255, 255, 255],
+        "selected_match_fg": [166, 229, 255, 255],
         "selected_bg": [24, 24, 24, 255]
     },
     {
         "class": "quick_panel_path_label",
-        "fg": [120, 120, 120, 255],
-        "match_fg": [200, 200, 200, 255],
+        "fg": [130, 130, 130, 255],
+        "match_fg": [220, 220, 220, 255],
         "bg": [41, 41, 41, 255],
-        "selected_fg": [130, 130, 130, 255],
-        "selected_match_fg": [255, 255, 255, 255],
+        "selected_fg": [175, 175, 175, 255],
+        "selected_match_fg": [220, 220, 220, 255],
         "selected_bg": [24, 24, 24, 255]
     },
     {
         "class": "quick_panel_score_label",
-        "fg": [137, 208, 244, 255],
+        "fg": [126, 199, 239, 255],
         "bg": [41, 41, 41, 255],
-        "selected_fg": [137, 208, 244, 255],
+        "selected_fg": [166, 229, 255, 255],
         "selected_bg": [24, 24, 24, 255]
     },
 
