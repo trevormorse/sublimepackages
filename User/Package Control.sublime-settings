@@ -1,8 +1,9 @@
 {
-	"auto_upgrade_last_run": 1338932338,
+	"auto_upgrade_last_run": 1339068027,
 	"installed_packages":
 	[
 		"Alignment",
+		"DocBlockr",
 		"Drupal Project Autocomplete",
 		"Drupal Snippets",
 		"Package Control",
