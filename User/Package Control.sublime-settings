@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1339068027,
+	"auto_upgrade_last_run": 1339203173,
 	"installed_packages":
 	[
 		"Alignment",
@@ -7,7 +7,6 @@
 		"Drupal Project Autocomplete",
 		"Drupal Snippets",
 		"Package Control",
-		"SublimeCodeIntel",
 		"sublimelint",
 		"Theme - Soda",
 		"ZenCoding"
