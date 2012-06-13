@@ -1,11 +1,12 @@
 {
-	"auto_upgrade_last_run": 1339203173,
+	"auto_upgrade_last_run": 1339601594,
 	"installed_packages":
 	[
 		"Alignment",
 		"DocBlockr",
 		"Drupal Project Autocomplete",
 		"Drupal Snippets",
+		"Format SQL",
 		"Package Control",
 		"sublimelint",
 		"Theme - Soda",
