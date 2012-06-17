@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1339601594,
+	"auto_upgrade_last_run": 1339852990,
 	"installed_packages":
 	[
 		"Alignment",
@@ -8,6 +8,7 @@
 		"Drupal Snippets",
 		"Format SQL",
 		"Package Control",
+		"SFTP",
 		"sublimelint",
 		"Theme - Soda",
 		"ZenCoding"
