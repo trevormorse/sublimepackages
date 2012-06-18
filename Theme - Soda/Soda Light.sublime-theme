@@ -350,7 +350,7 @@
 
     {
         "class": "minimap_control",
-        "viewport_color": [0, 0, 0, 30]
+        "viewport_color": [0, 0, 0, 35]
     },
 
 //
@@ -716,28 +716,26 @@
 
     {
         "class": "popup_control",
-        "content_margin": [0, 0]
-    },
-    {
-        "class": "auto_complete",
-        "row_padding": [2, 2],
+        "content_margin": [2, 2],
         "layer0.tint": [255, 255, 255],
         "layer0.opacity": 1.0
     },
     {
+        "class": "auto_complete",
+        "row_padding": [4, 2]
+    },
+    {
         "class": "auto_complete_label",
-        "fg": [0, 0, 0],
+        "fg": [51, 51, 51],
         "match_fg": [0, 0, 0],
-        "bg": [255, 255, 255],
-        "selected_fg": [255, 255, 255],
-        "selected_match_fg": [255, 255, 255],
-        "selected_bg": [56, 117, 215]
+        "selected_fg": [205, 226, 243],
+        "selected_match_fg": [255, 255, 255]
     },
     {
         "class": "table_row",
-        "layer0.texture": "Theme - Soda/Soda Light/code-completion-row-selected.png",
+        "layer0.texture": "Theme - Soda/Soda Light/autocomplete-row-selected.png",
         "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.inner_margin": [3, 1]
     },
     {
         "class": "table_row",

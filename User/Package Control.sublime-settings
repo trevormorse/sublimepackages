@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1339852990,
+	"auto_upgrade_last_run": 1340026470,
 	"installed_packages":
 	[
 		"Alignment",
@@ -10,6 +10,7 @@
 		"Package Control",
 		"SFTP",
 		"sublimelint",
+		"Task",
 		"Theme - Soda",
 		"ZenCoding"
 	]
